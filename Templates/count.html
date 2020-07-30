@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>There are {{ count }} words in your text</h1>
+
+<a href="{% url 'home' %}">Run Again</a>
+
+<h1>your text: </h1>
+
+ {{ fulltext }}
+
+<h1>Word Count:</h1>
+
+The following is a list of all the words in your entry, in alphabetical order, with their respective frequencies of appearance
+<br/>
+<br/>
+
+{% for word, counttotal in sorted_words %}
+
+{{word}}: {{counttotal}}
+<br/>
+
+{% endfor %}
+
+
+</body>
+</html>
